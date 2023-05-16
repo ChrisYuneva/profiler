@@ -1,0 +1,49 @@
+<div class="login-wrap d-flex justify-content-center align-items-center">
+  <form class="form d-flex flex-column justify-content-evenly align-items-center">
+    <div class="btn-close-wrap d-flex justify-content-end w-100">
+      <button (click)="close()" class="btn-close-cc">
+        <img src="../../assets/images/icon-close.svg">
+      </button>
+    </div>
+    <div *ngIf="isLoading" class="spinner-grow" style="width: 5rem; height: 5rem; background: white;" role="status">
+    </div>
+    <div *ngIf="hasResult && !isLoading" class="parseResult">
+      <span>
+        <h3>Результат обработки:</h3>
+      </span>
+      <div *ngIf="!hasError" style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
+        <span>Ссылка для скачивания результата: {{this.execResult.urlResult}}</span>
+        <span>Обработано файлов: {{this.execResult.files}}</span>
+        <span>Прогресс категоризации: {{this.execResult.progress}}</span>
+        <span>Время обработки: {{this.execResult.execTime}} с.</span>
+      </div>
+      <div *ngIf="hasError">
+        <span>Во время обработки, произошла ошибка, попробуйте ещё раз</span>
+      </div>
+      <span style="width: 60%;"><button class="parseResultBtn" type="button"
+          (click)="hasResult=false;hasError=false;">Обработать ещё</button></span>
+    </div>
+    <ngx-file-drop *ngIf="!isLoading && !hasResult" dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+      (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" [multiple]="true" [directory]="false"
+      accept="image/png, image/jpeg, .pdf, .docx" class="dropbox" dropZoneClassName="dropboxZone"
+      contentClassName="dropboxContent" browseBtnClassName="dropboxBrowse">
+      <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+        <input
+          type="file" 
+          accept=".docx, .doc, .png, .jpg, .pdf" 
+          size="1" 
+          id="file" 
+          (change)="onFileSelected($event)"
+        >
+        <span>Перетащите нужные файлы в эту зону</span>
+        <span>или</span>
+        <span style="width: 100%;">
+          <button class="dropboxBrowse" browseBtnClassName="dropboxBrowse" type="button"
+            (click)="openFileSelector()">Выберите файлы вручную</button>
+          <button *ngIf="isFilesReadyForDownload" class="dropboxBrowse" browseBtnClassName="dropboxBrowse" type="button"
+            (click)="upload()">Отправить на обработку</button>
+        </span>
+      </ng-template>
+    </ngx-file-drop>
+  </form>
+</div>

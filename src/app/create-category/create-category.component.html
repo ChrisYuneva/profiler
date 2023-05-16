@@ -1,0 +1,18 @@
+<div class="login-wrap d-flex justify-content-center align-items-center">
+  <form method="POST" (ngSubmit) = "createCategory()" action="" class="form d-flex flex-column justify-content-evenly align-items-center" ngNativeValidate>
+    <div class="btn-close-wrap d-flex justify-content-end w-100">
+      <button (click)="close()" class="btn-close-cc">
+        <img src="../../assets/images/icon-close.svg">
+      </button>
+    </div>
+
+    <h3>Создание категории</h3>
+    <div class="d-flex flex-column gap-2 w-75">
+      <input type="text" placeholder="Категория" id="categoryName" class="form-control" required>
+      <input type="text" placeholder="Ключевые слова" id="categoryTokens" class="form-control" required>
+    </div>
+
+    <button class="btn-login" type="submit">Создать</button>
+  </form>
+</div>
+
