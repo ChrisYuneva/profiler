@@ -13,6 +13,8 @@ const API_URL: string = environment.apiUrl;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  // login = '';
+
   public formLogin = new FormGroup({
     login: new FormControl(''),
     password: new FormControl(''),

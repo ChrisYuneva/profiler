@@ -1,16 +1,23 @@
 <div class="login-wrap d-flex justify-content-center align-items-center">
   <form class="form d-flex flex-column align-items-center">
     <h3 class="login-h3">Вход</h3>
+    <!-- <span>Ваш логин: {{login}}</span> -->
     <div class="d-flex flex-column form-wrap">
       <form [formGroup] = "formLogin" (ngSubmit) = "login()" method = "POST" class="gap-3 d-flex flex-column justify-content-center align-items-center" style="width: 100%; border-radius: 10px;" ngNativeValidate>
-<!--        <div class="d-flex flex-column align-items-center">-->
-          <input type="text" [innerHTML]="login" placeholder="Логин" class="form-control" formControlName="login" minlength="4" maxlength="20" required>
-          <input type="password" placeholder="Пароль" class="form-control" id="password" formControlName="password" minlength="8" maxlength="20" required>
+          
+    <!-- <span>Ваш логин: {{login}}</span> -->
+          <input name="login" type="text" placeholder="Логин" class="form-control" formControlName="login" minlength="4" maxlength="50" required>
+          <input name="password" type="password" placeholder="Пароль" class="form-control" id="password" formControlName="password" minlength="8" maxlength="20" required>
           <button class="btn-login" type="submit">Войти</button>
-<!--        </div>-->
 
       </form>
+      <!-- <div class="gap-3 d-flex flex-column justify-content-center align-items-center" style="width: 100%; border-radius: 10px;">
+        <span>{{login}}</span>
+        <input name="login" [(ngModel)]="login" type="text" placeholder="Логин" class="form-control" minlength="4" maxlength="100" required>
+        <input name="password" type="password" placeholder="Пароль" class="form-control" id="password" minlength="8" maxlength="20" required>
+        <button class="btn-login" type="submit">Войти</button>
+      </div>
       <span *ngIf="hasError" class="alert alert-warning" role="alert">{{errorMsg}}</span>
-    </div>
-  </form>
+    </div> -->
+  <!-- </form> -->
 </div>

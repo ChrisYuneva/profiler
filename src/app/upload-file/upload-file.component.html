@@ -28,17 +28,17 @@
       accept="image/png, image/jpeg, .pdf, .docx" class="dropbox" dropZoneClassName="dropboxZone"
       contentClassName="dropboxContent" browseBtnClassName="dropboxBrowse">
       <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-        <input
+        <!-- <input
           type="file" 
           accept=".docx, .doc, .png, .jpg, .pdf" 
           size="1" 
           id="file" 
           (change)="onFileSelected($event)"
-        >
-        <span>Перетащите нужные файлы в эту зону</span>
-        <span>или</span>
+        > -->
+        <span style="font-size: 20px;">Перетащите нужные файлы в эту зону</span>
+        <span style="font-size: 20px;">или</span>
         <span style="width: 100%;">
-          <button class="dropboxBrowse" browseBtnClassName="dropboxBrowse" type="button"
+          <button class="dropboxBrowse" browseBtnClassName="dropboxBrowse" type="button" style="font-size: 18px;"
             (click)="openFileSelector()">Выберите файлы вручную</button>
           <button *ngIf="isFilesReadyForDownload" class="dropboxBrowse" browseBtnClassName="dropboxBrowse" type="button"
             (click)="upload()">Отправить на обработку</button>
