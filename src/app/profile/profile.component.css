@@ -8,14 +8,6 @@
   padding-right: 1rem;
 }
 
-/*li::before {*/
-/*  content: url("src/assets/images/icon-close.svg");*/
-/*  !*background: lightgray;*!*/
-/*  border-radius: 1ch;*/
-/*  padding-inline: 1ch;*/
-/*  margin-inline-end: 1ch;*/
-/*}*/
-
 ul {
   padding: 0;
 }
@@ -30,8 +22,6 @@ li {
   background-color: #9DD7E9;
   border-radius: 10px;
   width: 20%;
-  /*height: 60vh;*/
-  /*border: 2px solid #1FBBEB;*/
 }
 
 .btn-create {

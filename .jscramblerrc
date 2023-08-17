@@ -1,0 +1,66 @@
+{
+ "filesSrc": [
+   "./dist/**/*.html",
+   "./dist/**/*.js"
+ ],
+ "filesDest": "./",
+ "params": [
+   {
+     "name": "whitespaceRemoval" // удаление ненужных пробельных символов
+   },
+   {
+     "name": "identifiersRenaming", // Заменяет имена идентификаторов случайно сгенерированными именами, которые короче и не имеют смысла.
+     "options": {
+       "mode": "SAFEST"
+     }
+   },
+   {
+     "name": "dotToBracketNotation" // Точечная нотация в скобки преобразует составные ссылки в точечной нотации в нотацию в квадратных скобках
+   },
+   {
+     "name": "deadCodeInjection" // Dead Code Injection случайным образом внедряет мертвый код по всей вашей программе
+   },
+   {
+     "name": "stringConcealing" // кодирование переменных, содержащих в своих значениях строки
+   },
+   {
+     "name": "functionReordering" // Упорядочивание функций произвольно упорядочивает объявления функций
+   },
+   {
+     "options": {
+       "freq": 1,
+       "features": [
+         "opaqueFunctions"
+       ]
+     },
+     "name": "functionOutlining" // Function Outlining преобразует одно или группу утверждений в новое объявление функции
+   },
+   {
+     "name": "propertyKeysObfuscation" // Обфускация ключей свойств преобразует свойства литерала объекта в их шестнадцатеричное и/или юникодовое представление
+   },
+   {
+     "name": "regexObfuscation" // замена символов в регулярном выражении случайным образом
+   },
+   {
+     "name": "booleanToAnything" // преобразование булевого значения в более сложное
+   }
+ ],
+ "areSubscribersOrdered": false,
+ "applicationTypes": {
+   "webBrowserApp": true,
+   "desktopApp": false,
+   "serverApp": false,
+   "hybridMobileApp": false,
+   "javascriptNativeApp": false,
+   "html5GameApp": false
+ },
+ "languageSpecifications": {
+   "es5": true,
+   "es6": false,
+   "es7": false
+ },
+ "useRecommendedOrder": true,
+ "jscramblerVersion": "5.<X>"
+}
+
+

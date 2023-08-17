@@ -22,7 +22,6 @@ export class ProfileComponent implements OnInit {
   allCategory: { id: number; name: string, token: { val: string }[] }[] = [];
   currentLogin = JSON.parse(AuthService.getCurrentUser()).login;
 
-  //for lottie animations
   options: AnimationOptions = {
     path: '../../assets/document.json',
   };

@@ -8,8 +8,8 @@ import {ProfileComponent} from "./profile/profile.component";
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'profile', component: ProfileComponent, canActivate:[AuthService]}, //пускаем в профиль только в случае авторизации
-  {path: "**", redirectTo:""} // редиректим на главную в случае, если стучимся на адрес, которого нет в роутинге
+  {path: 'profile', component: ProfileComponent, canActivate:[AuthService]},
+  {path: "**", redirectTo:""}
 ];
 
 @NgModule({

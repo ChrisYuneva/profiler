@@ -27,15 +27,15 @@ export class AuthService {
     this.router.navigate(['']);
   }
 
-  static getCurrentUser() : string { // получить из локального хранилища текущего пользователя
+  static getCurrentUser() : string {
     return sessionStorage.getItem('user')!;
   }
 
-  static getJwtHeader() { // HTTP заголовки для JWT аутентификации
+  static getJwtHeader() {
     return {headers: {'Content-Type':'application/json','Authorization':"Bearer " + JSON.parse(sessionStorage.getItem('user')!).token}};
   }
 
-  static getJwtHeaderForFiles() { // HTTP заголовки для JWT аутентификации
+  static getJwtHeaderForFiles() {
     return {headers: {'Authorization':"Bearer " + JSON.parse(sessionStorage.getItem('user')!).token}};
   }
 }
